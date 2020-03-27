@@ -1,0 +1,21 @@
+---
+title: "Task1: Architecture of bdchecks"
+output: html_notebook
+---
+1. The architecture of "bdchecks" is based on S4 object oriented programming system in R.
+
+2. It mainly consists of 2 YAML and various R function files.
+
+3. One YAML file contains metadata which, along with R function files generates R documentation i.e. roxygen2 comments by a function called as "datacheck_info_export()".
+
+4. Datachecks are performed on a dataset using function "perform_dc()" function. A report of the tests on dataset can be generated using "summary_dc()".
+
+5. While other YAML file stores all the multiple testing cases for each of the datachecks and each testing scenario is converted to unit tests.
+
+6. A summarization of the expected results against observed results of each of the above mentioned tests can be generated using "perform_test_dc(pkg='project location')" function.
+
+7. 2 Shiny apps were developed stored at "bdchecks.app" R package.
+
+8. One is a "user" app built using shiny package which helps perform the selected checks, review the results, filter the data based on the results of each data check.
+
+9.The other one is "Admin" app also built using the same package. The Admin app enables a convenient user interface for editing and managing numerous data checks.
