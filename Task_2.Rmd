@@ -1,0 +1,15 @@
+---
+title: "Pull request for month_empty"
+output: html_notebook
+---
+1. Firstly, metadata updation was done in data_check.yaml. 
+
+2. Then, tests were added to data_tests.yaml.
+
+3. Finally R script was added to check that month is empty or not.
+
+4. Changes were correctly installed and checks were done as instructed.
+
+5.  Added pull request for checking weather the month field is empty in the dataset or not. 
+
+[LINK](https://github.com/bd-R/bdchecks/pull/20)
