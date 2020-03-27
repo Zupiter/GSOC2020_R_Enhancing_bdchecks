@@ -1,7 +1,0 @@
----
-title: "Task1: Architecture of bdchecks"
-output: html_notebook
----
-Submitted pull request to check if month field is empty or not.
-
-Link: https://github.com/bd-R/bdchecks/pull/20
