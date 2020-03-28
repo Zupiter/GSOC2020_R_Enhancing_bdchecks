@@ -1,0 +1,68 @@
+---
+title: "TASK 3"
+output: html_notebook
+---
+
+# Data Check Code Structure & Coding Best Practices:
+
+## Object Oriented Programming:
+
+### a. Modularity for easier troubleshooting: 
+* Helps in debugging by looking through only those objects which causes errors.
+* Objects are self-contained, and each bit of functionality does its own thing while leaving the other bits alone. Also, this modality allows us to build a package while workint on multiple objects simultaneously.
+
+### b. Inheritance of Classes:
+* Inheritance is the process of creating new classes, called derived classes, from existing classes or base classes. The derived class inherits all the capabilities of the base class, but can add embellishments and refinements of its own.
+
+* Thus it permits code reusability. Reusability saves time in program development. It encourages the reuse of proven and debugged high-quality software, thus reducing problem after a system becomes functional.
+
+### c. Flexibility through polymorphism:
+* Polymorphism (method overloading) allows one to write more than one method with the same name but with different number of arguments. Hence same method name can be used to perform operations on different data types.
+
+* Polymorphism (method dispatching) allows one to define multiple definitions to use based on the nature of the involved objects.
+
+## Implications in Data Check code structure
+
+* Every data check and their results on a dataset can be considered as a different object of a particular class.
+
+* Each function like methods for performing checks should operate on these classes and store the subsequent results in objects of result class.
+
+* The implementation of above points can be seen in **bdchecks** package where every datacheck in data_check.yaml can be conidered as an object of **Datacheck** class.
+
+* While **DataCheckFlag** class consists of result of data_check on a datapoint of the dataset.
+
+* Note that **bdchecks** package have a seperate class of set of Data checks and set of all resultant data checks on data point namely **DataCheckSet** and **DataCheckFlagSet** respectively.
+
+
+## Quality of Data Checks:
+* Meta data of each data check i.e. should contain all the necessary information with unique ids and adequate target coloumn fields.
+
+* Redundant and low quality checks should be removed after conducting checks on quality of these data checks by verifying them on various datasets of similar kind.
+
+* Data Check should take care of all cases possible for the target fields in datasets i.e. they should be robust.
+
+## Implications in Data Check code structure:
+* While constructing roxygen2 comments one can check metadata for the check and abort it if some information is incosistent.
+* A detailed analysis should be generated about each data check after running it by some method like **perform_dc()** on data as done by **summary_dc()** function.
+* Functions such as **perform_test_dc()**  in **bdcheck** must be implemented to test data checks using robust test cases and then create report on them.
+
+## Users & Data Checks
+
+* A choice should be provided to users of what data checks they would like to conduct. 
+
+* Note: Since data checks can be large in number its better to divide it into various components where each component consists of similar type of data checks and one containing miscellaneous data checks.
+
+* A choice should also be provided to users to add new data checks currently not existing and check them on test cases.
+
+
+## Implications in Data Check code structure:
+
+* A flag list could be incorported inside **perform_dc()** and **perform_test_dc()** functions to mask the data checks users do not want to run.
+
+
+
+
+
+
+
+        
