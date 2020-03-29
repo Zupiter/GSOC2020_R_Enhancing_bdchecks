@@ -21,7 +21,7 @@ output: html_notebook
 
 * Polymorphism (method dispatching) allows one to define multiple definitions to use based on the nature of the involved objects.
 
-## Implications in Data Check code structure
+## Implications:
 
 * Every data check and their results on a dataset can be considered as a different object of a particular class.
 
@@ -29,7 +29,7 @@ output: html_notebook
 
 * The implementation of above points can be seen in **bdchecks** package where every datacheck in data_check.yaml can be conidered as an object of **Datacheck** class.
 
-* While **DataCheckFlag** class consists of result of data_check on a datapoint of the dataset.
+* While **DataCheckFlag** class consists of result objects of data check on a datapoint of the dataset.
 
 * Note that **bdchecks** package have a seperate class of set of Data checks and set of all resultant data checks on data point namely **DataCheckSet** and **DataCheckFlagSet** respectively.
 
@@ -41,7 +41,7 @@ output: html_notebook
 
 * Data Check should take care of all cases possible for the target fields in datasets i.e. they should be robust.
 
-## Implications in Data Check code structure:
+## Implications :
 * While constructing roxygen2 comments one can check metadata for the check and abort it if some information is incosistent.
 * A detailed analysis should be generated about each data check after running it by some method like **perform_dc()** on data as done by **summary_dc()** function.
 * Functions such as **perform_test_dc()**  in **bdcheck** must be implemented to test data checks using robust test cases and then create report on them.
@@ -55,9 +55,24 @@ output: html_notebook
 * A choice should also be provided to users to add new data checks currently not existing and check them on test cases.
 
 
-## Implications in Data Check code structure:
+## Implications:
 
 * A flag list could be incorported inside **perform_dc()** and **perform_test_dc()** functions to mask the data checks users do not want to run.
+
+## Miscellaneous:
+
+###  Better roxygen2 comments:
+* Better comments could be made so that users can better understand data checks using Rmd files.
+
+### Reducing length of functions:
+* Methods performing multiple tasks can be broken down to perform subtasks like **perform_dc()** making it easier to understand as well as
+easier for debugging.
+
+### Error return values and exception handling conventions
+* Proper errors return values should be generated to help identify the bug as soon as possible.
+
+###  Better indented code:
+* Code should be properly indented.
 
 
 
